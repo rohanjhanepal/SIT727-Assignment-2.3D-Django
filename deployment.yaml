@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sit727-django-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sit727-django
+  template:
+    metadata:
+      labels:
+        app: sit727-django
+    spec:
+      containers:
+        - name: sit727-django-container
+          image: sit727-django-app
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
