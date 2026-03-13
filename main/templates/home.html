@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIT727 Django App</title>
+</head>
+<body>
+    <h1>SIT727 MVC Application on Kubernetes</h1>
+    <p>This page is served using Django, Docker Desktop, and Kubernetes.</p>
+
+    <h2>Messages</h2>
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li><strong>{{ message.title }}</strong>: {{ message.content }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages in database yet.</p>
+    {% endif %}
+</body>
+</html>
